@@ -1,22 +1,26 @@
 package interfaces;
 
 public class Order {
-  private String item;
+  private String itemName;
   private int quantity;
+  private boolean filled;
 
-  public Order(String item, int quantity) {
-    this.item = item;
+  public Order(String itemName, int quantity) {
+    filled = false;
+    this.itemName = itemName;
     this.quantity = quantity;
   }
 
-  public boolean fill(Warehouse wareHouse) {
-    boolean fulfilled = false;
-    if (wareHouse.hasInventory(item, quantity)) {
-      wareHouse.remove(item, quantity);
-      fulfilled = true;
+  public void fill(Warehouse wareHouse) {
+    if (wareHouse.hasInventory(itemName, quantity)) {
+      wareHouse.remove(itemName, quantity);
+      filled = true;
     } else {
       System.out.println("Send email: Not enough in stock");
     }
-    return fulfilled;
+  }
+
+  public boolean isFilled() {
+    return filled;
   }
 }

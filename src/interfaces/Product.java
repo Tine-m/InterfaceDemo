@@ -2,22 +2,22 @@ package interfaces;
 
 public class Product {
   private String productName;
-  private int quantityOnHand;
+  private int quantityAvailable;
 
-  public Product(String productName, int quantityOnHand) {
+  public Product(String productName, int quantityAvailable) {
     this.productName = productName;
-    this.quantityOnHand = quantityOnHand;
+    this.quantityAvailable = quantityAvailable;
   }
 
   public String getProductName() {
     return productName;
   }
 
-  public int getQuantityOnHand() {
-    return quantityOnHand;
+  public int getQuantityAvailable() {
+    return quantityAvailable;
   }
 
   public void remove(int quantity) {
-    quantityOnHand -= quantity;
+    quantityAvailable -= quantity;
   }
 }
