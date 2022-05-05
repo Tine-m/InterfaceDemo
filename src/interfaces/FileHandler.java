@@ -40,5 +40,4 @@ public class FileHandler {
     output.print(product.getQuantityAvailable());
     output.print("\n");
   }
-
 }

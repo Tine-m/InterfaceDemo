@@ -1,9 +1,12 @@
 package interfaces;
 
-public class WarehouseStub2 implements Warehouse{
+public class WarehouseStub2 implements Warehouse {
+
   @Override
   public boolean hasInventory(String product, int quantity) {
-    return false;
+    if (quantity <= 50)
+      return true;
+    else return false;
   }
 
   @Override
