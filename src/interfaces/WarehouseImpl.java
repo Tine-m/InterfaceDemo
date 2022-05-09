@@ -1,5 +1,7 @@
 package interfaces;
 
+import persistence.FileHandler;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -14,7 +16,7 @@ public class WarehouseImpl implements Warehouse {
     populateWarehouse();
   }
 
-  private void populateWarehouse() throws FileNotFoundException {
+  public void populateWarehouse() throws FileNotFoundException {
     inventory = fileHandler.loadProducts();
   }
 

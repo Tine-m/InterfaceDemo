@@ -1,4 +1,6 @@
-package interfaces;
+package persistence;
+
+import interfaces.Product;
 
 import java.io.File;
 import java.io.FileNotFoundException;
