@@ -1,19 +1,27 @@
-package interfaces;
+package domain;
 
+import persistence.FileHandler;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class WarehouseStub implements Warehouse{
+public class WarehouseImpl implements Warehouse {
 
   private ArrayList<Product> inventory;
+  private FileHandler fileHandler;
 
-  public WarehouseStub() {
-    this.inventory = new ArrayList<>();
+  public WarehouseImpl() throws FileNotFoundException {
+    fileHandler = new FileHandler();
+    inventory = new ArrayList<>();
     populateWarehouse();
   }
 
-  private void populateWarehouse() {
-    inventory.add(new Product("TALISKER", 50));
-    inventory.add(new Product("TALISKER2", 50));
+  public void populateWarehouse() throws FileNotFoundException {
+    inventory = fileHandler.loadProducts();
+  }
+
+  public void saveWarehouse() throws FileNotFoundException {
+    fileHandler.saveProducts(inventory);
   }
 
   @Override

@@ -1,4 +1,4 @@
-package interfaces;
+package domain;
 
 public class Product {
   private String productName;

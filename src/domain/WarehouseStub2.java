@@ -1,4 +1,4 @@
-package interfaces;
+package domain;
 
 public class WarehouseStub2 implements Warehouse {
 

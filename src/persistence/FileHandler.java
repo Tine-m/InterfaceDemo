@@ -1,6 +1,6 @@
 package persistence;
 
-import interfaces.Product;
+import domain.Product;
 
 import java.io.File;
 import java.io.FileNotFoundException;
